@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banana Front</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🍌 BANANA FRONT</div>
+    <div class="stats">
+      <span>💰 $<b id="money">500</b></span>
+      <span>⚔️ <b id="kills">0</b></span>
+      <span>🏭 <b id="income">0</b>/sec</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="game-area">
+      <canvas id="game"></canvas>
+      <div class="overlay" id="message">Build your base and defeat the enemy!</div>
+      <div class="help">WASD: Camera | Mouse: Build / Select | ESC: Cancel</div>
+    </section>
+
+    <aside>
+      <h2>BUILD MENU</h2>
+      <p class="subtitle">Purchase and place structures</p>
+
+      <div class="build-item">
+        <button onclick="chooseBuild('factory')">🏭 Factory <span>$150</span></button>
+        <small>Generates $8 every second.</small>
+      </div>
+
+      <div class="build-item">
+        <button onclick="chooseBuild('barracks')">🏕️ Barracks <span>$200</span></button>
+        <small>Produces friendly soldiers.</small>
+      </div>
+
+      <div class="build-item">
+        <button onclick="chooseBuild('turret')">🔫 Machine Gun Turret <span>$125</span></button>
+        <small>Automatically attacks enemies.</small>
+      </div>
+
+      <div class="build-item">
+        <button onclick="chooseBuild('bunker')">🛡️ Bunker <span>$175</span></button>
+        <small>Strong defensive structure.</small>
+      </div>
+
+      <div class="build-item">
+        <button onclick="chooseBuild('wall')">🧱 Wall <span>$30</span></button>
+        <small>Blocks enemy movement.</small>
+      </div>
+
+      <div class="build-item">
+        <button onclick="chooseBuild('farm')">🍌 Banana Farm <span>$100</span></button>
+        <small>Generates $4 every second.</small>
+      </div>
+
+      <hr>
+
+      <h3>SELECTED BUILDING</h3>
+      <div id="selection">Nothing selected</div>
+      <button class="upgrade" id="upgradeBtn" onclick="upgradeBuilding()" disabled>
+        Upgrade Building
+      </button>
+      <button class="sell" onclick="sellBuilding()">Sell Building</button>
+
+      <hr>
+      <h3>BATTLEFIELD</h3>
+      <p>Friendly soldiers: <b id="soldiers">0</b></p>
+      <p>Enemy soldiers: <b id="enemies">0</b></p>
+      <p>Enemy base health: <b id="enemyHealth">1000</b></p>
+      <p>Wave: <b id="wave">1</b></p>
+
+      <button class="save" onclick="saveGame()">💾 Save Game</button>
+      <button class="save" onclick="loadGame()">📂 Load Game</button>
+      <button class="restart" onclick="restartGame()">Restart Game</button>
+    </aside>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
