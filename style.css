@@ -1,0 +1,193 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #17221a;
+  color: white;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+header {
+  height: 65px;
+  background: #202d22;
+  border-bottom: 3px solid #465b39;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: #ffe45c;
+}
+
+.stats {
+  display: flex;
+  gap: 25px;
+  font-size: 17px;
+}
+
+main {
+  display: flex;
+  height: calc(100vh - 65px);
+}
+
+.game-area {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #63794b;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+.overlay {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #18251ddd;
+  padding: 10px 18px;
+  border-radius: 8px;
+  pointer-events: none;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.help {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: #17251dcc;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+aside {
+  width: 265px;
+  min-width: 265px;
+  background: #202d24;
+  padding: 14px;
+  overflow-y: auto;
+}
+
+h2 {
+  color: #ffe45c;
+  margin: 3px 0;
+}
+
+h3 {
+  color: #ffe45c;
+  font-size: 14px;
+}
+
+.subtitle {
+  color: #a9b9a5;
+  font-size: 12px;
+}
+
+.build-item {
+  margin: 12px 0;
+}
+
+.build-item button {
+  width: 100%;
+  padding: 11px 7px;
+  background: #40583c;
+  border: 1px solid #657c51;
+  border-radius: 5px;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.build-item button:hover {
+  background: #587747;
+}
+
+.build-item button span {
+  float: right;
+  color: #ffe45c;
+}
+
+.build-item small {
+  display: block;
+  color: #b5c1af;
+  margin: 4px;
+}
+
+aside p {
+  font-size: 13px;
+}
+
+button {
+  font-family: inherit;
+}
+
+.upgrade, .sell, .save, .restart {
+  width: 100%;
+  padding: 10px;
+  margin-top: 7px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.upgrade { background: #347f43; }
+.upgrade:disabled { background: #555; cursor: not-allowed; }
+.sell { background: #936132; }
+.save { background: #345c7b; }
+.restart { background: #8a3939; }
+
+hr {
+  border: 0;
+  border-top: 1px solid #52634e;
+  margin: 15px 0;
+}
+
+#selection {
+  font-size: 13px;
+  min-height: 30px;
+  color: #d7e5d0;
+}
+
+@media(max-width: 750px) {
+  main {
+    flex-direction: column;
+  }
+
+  .game-area {
+    flex: 1;
+    min-height: 300px;
+  }
+
+  aside {
+    width: 100%;
+    min-width: 0;
+    height: 230px;
+  }
+
+  .stats {
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+}
